@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
         self.url_bar.setText(q.toString())
 
 
-
+#main
 app = QApplication(sys.argv)
 QApplication.setApplicationName('Dom Browser')
 window = MainWindow()
