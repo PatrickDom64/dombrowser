@@ -17,6 +17,7 @@ class MainWindow(QMainWindow):
         navbar = QToolBar()
         self.addToolBar(navbar)
 
+
         back_btn = QAction('Back', self)
         back_btn.triggered.connect(self.browser.back)
         navbar.addAction(back_btn)
@@ -39,6 +40,11 @@ class MainWindow(QMainWindow):
 
         self.browser.urlChanged.connect(self.update_url)
 
+        tabs = QToolBar()
+        self.addToolBar(tabs)
+        plustab = QAction('+', self)
+
+
     def navigate_home(self):
         self.browser.setUrl(QUrl('https://duckduckgo.com/'))
 
@@ -48,7 +54,6 @@ class MainWindow(QMainWindow):
 
     def update_url(self, q):
         self.url_bar.setText(q.toString())
-
 
 #main
 app = QApplication(sys.argv)
